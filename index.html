@@ -1,41 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IIT Guwahati - Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIT Guwahati</title>
   <style>
-    /* Reset & base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; background: #f5f5f5; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; color: #222; }
 
-    /* Header/Nav */
-    header { background: #00462e; color: #fff; }
-    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; }
-    .navbar .brand { font-size: 1.5rem; font-weight: bold; }
-    .navbar ul { list-style: none; display: flex; gap: 1.5rem; }
-    .navbar a { color: #fff; font-weight: 500; }
-    .navbar a:hover { text-decoration: underline; }
+    header {
+      background-color: #002b36;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { font-size: 1.8rem; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      border-bottom: 2px solid #00acc1;
+    }
 
-    /* Hero */
-    .hero { background: url('https://via.placeholder.com/1600x600?text=IIT+Guwahati') center/cover no-repeat; height: 60vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
-    .hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
-    .hero h1 { position: relative; font-size: 2.5rem; color: #fff; }
-    .hero p { position: relative; margin-top: 1rem; font-size: 1.1rem; color: #eee; }
+    .banner {
+      background: url('https://via.placeholder.com/1600x500?text=IIT+Guwahati+Campus') center/cover no-repeat;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+    }
+    .banner h2 {
+      position: relative;
+      font-size: 2.5rem;
+      z-index: 1;
+    }
 
-    /* Main content */
-    main { padding: 2rem; max-width: 1200px; margin: auto; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #004d40;
+      margin-bottom: 20px;
+      border-left: 6px solid #00acc1;
+      padding-left: 12px;
+    }
+    .departments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .dept-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      padding: 20px;
+    }
+    .dept-card:hover {
+      transform: translateY(-5px);
+    }
+    .dept-card h3 {
+      margin-bottom: 10px;
+      color: #00796b;
+    }
+    .dept-card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
 
-    .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; }
-    .card-content { padding: 1.5rem; }
-    .card-content h3 { margin-bottom: 0.75rem; color: #00462e; }
-    .card-content p { color: #555; }
-    .card-content a { display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: #00462e; color: #fff; border-radius: 4px; font-size: 0.9rem; }
-    .card-content a:hover { background: #003a25; }
+    footer {
+      background-color: #263238;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ccc;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
 
-   
+  <header>
+    <h1>IIT Guwahati</h1>
+    <nav>
+      <ul>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#campus">Campus Life</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h2>Inspiring Innovation & Excellence</h2>
+  </section>
+
+  <section id="departments">
+    <h2>Academic Departments</h2>
+    <div class="departments">
+      <div class="dept-card">
+        <h3>Computer Science & Engineering</h3>
+        <p>Advanced curriculum in algorithms, machine learning, and systems engineering.</p>
+      </div>
+      <div class="dept-card">
+        <h3>Mechanical Engineering</h3>
+        <p>Cutting-edge labs in thermal systems, dynamics, robotics, and manufacturing.</p>
+      </div>
+      <div class="dept-card">
+        <h3>Physics Department</h3>
+        <p>Fundamental research in quantum mechanics, optics, and condensed matter.</p>
+      </div>
+      <div class="dept-card">
+        <h3>Design Department</h3>
+        <p>Blending engineering and aesthetics to shape human-centered innovations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="admissions">
+    <h2>Admissions</h2>
+    <p style="max-width:800px;">
+      IIT Guwahati offers undergraduate, postgraduate, and doctoral programs. Admissions are based on national exams like JEE, GATE, and JAM. Visit the official admissions portal to check eligibility, dates, and procedure.
+    </p>
+  </section>
+
+  <section id="campus">
+    <h2>Campus Life</h2>
+    <p style="max-width:800px;">
+      With its serene location and state-of-the-art infrastructure, the IITG campus provides students with a perfect blend of academics and recreation. Clubs, festivals, and student bodies enrich the vibrant cultural atmosphere.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Indian Institute of Technology Guwahati</p>
+    <div>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Site Map</a> |
+      <a href="#">Official Website</a>
+    </div>
+  </footer>
+
+</body>
+</html>
