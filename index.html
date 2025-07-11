@@ -3,57 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Dashboard</title>
+  <title>IIT Guwahati - Home</title>
   <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { display: flex; font-family: 'Segoe UI', sans-serif; height: 100vh; }
-    nav.sidebar { width: 220px; background: #2C3E50; color: #ECF0F1; padding: 20px; }
-    nav.sidebar ul { list-style: none; }
-    nav.sidebar li { margin: 20px 0; }
-    nav.sidebar a { color: inherit; text-decoration: none; font-size: 1.1em; }
-    nav.sidebar a:hover { text-decoration: underline; }
-    .main { flex: 1; display: flex; flex-direction: column; }
-    header.top-nav { background: #ECF0F1; padding: 15px 20px; border-bottom: 1px solid #BDC3C7; display: flex; justify-content: space-between; align-items: center; }
-    .top-nav .title { font-size: 1.2em; font-weight: bold; }
-    .top-nav .user { font-size: 0.9em; color: #7F8C8D; }
-    .content { padding: 20px; overflow-y: auto; }
-    .widget { background: #fff; border-radius: 6px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-    .widget h2 { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-  </style>
-</head>
-<body>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; background: #f5f5f5; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
-  <nav class="sidebar">
-    <h2>MyApp</h2>
-    <ul>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Users</a></li>
-      <li><a href="#">Reports</a></li>
-      <li><a href="#">Settings</a></li>
-    </ul>
-  </nav>
+    /* Header/Nav */
+    header { background: #00462e; color: #fff; }
+    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; }
+    .navbar .brand { font-size: 1.5rem; font-weight: bold; }
+    .navbar ul { list-style: none; display: flex; gap: 1.5rem; }
+    .navbar a { color: #fff; font-weight: 500; }
+    .navbar a:hover { text-decoration: underline; }
 
-  <div class="main">
-    <header class="top-nav">
-      <div class="title">Dashboard</div>
-      <div class="user">Hello, Admin</div>
-    </header>
-    
-    <div class="content">
-      <div class="widget">
-        <h2>Overview</h2>
-        <p>Today's stats: 1,234 visitors • 76 signup conversions • 4 new messages.</p>
-      </div>
-      <div class="widget">
-        <h2>Recent Activity</h2>
-        <ul>
-          <li>User "jane_doe" updated profile.</li>
-          <li>"marketing.xlsx" was downloaded.</li>
-          <li>"Error report" acknowledged.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    /* Hero */
+    .hero { background: url('https://via.placeholder.com/1600x600?text=IIT+Guwahati') center/cover no-repeat; height: 60vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .hero::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+    .hero h1 { position: relative; font-size: 2.5rem; color: #fff; }
+    .hero p { position: relative; margin-top: 1rem; font-size: 1.1rem; color: #eee; }
 
-</body>
-</html>
+    /* Main content */
+    main { padding: 2rem; max-width: 1200px; margin: auto; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+    .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; }
+    .card-content { padding: 1.5rem; }
+    .card-content h3 { margin-bottom: 0.75rem; color: #00462e; }
+    .card-content p { color: #555; }
+    .card-content a { display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: #00462e; color: #fff; border-radius: 4px; font-size: 0.9rem; }
+    .card-content a:hover { background: #003a25; }
+
+   
