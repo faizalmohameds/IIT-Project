@@ -1,0 +1,34 @@
+name: Simple CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Security Scan
+        run: |
+          echo "Running security scan..."
+          ./gradlew dependencyCheckAnalyze
+
+  build:
+    runs-on: ubuntu-latest
+    needs: scan
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Application
+        run: |
+          chmod +x gradlew
+          ./gradlew clean build
